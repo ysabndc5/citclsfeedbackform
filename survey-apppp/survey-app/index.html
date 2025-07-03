@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Visitor Feedback Form</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<style>
+form {
+  background: rgba(255, 255, 255, 0.92);
+  padding: 20px;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+.form-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+.form-row label {
+  flex: 1;
+  min-width: 140px;
+  font-weight: bold;
+}
+
+.form-row input,
+.form-row select,
+.form-row textarea {
+  flex: 2;
+  min-width: 200px;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  position: relative;
+  overflow-y: auto;
+  justify-content: center;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: url('https://web.ua.edu.ph/wp-content/uploads/2024/09/ua-logo.png')
+    no-repeat center center / cover;
+  background-size: contain;
+  filter: blur(7px);
+  z-index: -1;
+}
+</style>
+<body>
+  <center><br>
+  <h1>Visitor Feedback Form</h1>
+  <form id="surveyForm">
+  <i>
+
+  <!-- Type of Visitor -->
+  <div class="form-row">
+    <label for="visitorType">Type of Visitor:</label>
+    <select name="visitorType" required>
+      <option value="">Select...</option>
+      <option value="Student">Student</option>
+      <option value="Faculty">Faculty</option>
+      <option value="Guest">Guest</option>
+    </select>
+  </div>
+
+  <!-- ✅ Name Field Added -->
+  <div class="form-row">
+    <label for="name">Name:</label>
+    <input type="text" name="name" placeholder="Enter your name" required>
+  </div>
+
+  <!-- Purpose -->
+  <div class="form-row">
+    <label for="purpose">Purpose of Visit:</label>
+    <textarea name="purpose" rows="3" required></textarea>
+  </div>
+
+  <!-- Date -->
+  <div class="form-row">
+    <label>Date of Visit:</label>
+    <input type="date" name="date" required><br><br>
+  </div>
+
+  <!-- Staff Rating -->
+  <div class="form-row">
+    <label>Rate the staff accommodating level.</label>
+    <select name="staffRating" required>
+      <option value="">Select...</option>
+      <option value="5">5</option>
+      <option value="4">4</option>
+      <option value="3">3</option>
+      <option value="2">2</option>
+      <option value="1">1</option>
+    </select><br><br>
+  </div>
+
+  <!-- Concern Addressed -->
+  <div class="form-row">
+    <label>Was your concern addressed?</label>
+    <select name="concernAddressed" required>
+      <option value="">Select...</option>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+    </select><br><br>
+  </div>
+
+  <!-- Overall Rating -->
+  <div class="form-row">
+    <label>Rate overall experience:</label>
+    <select name="overallRating" required>
+      <option value="">Select...</option>
+      <option value="5">5</option>
+      <option value="4">4</option>
+      <option value="3">3</option>
+      <option value="2">2</option>
+      <option value="1">1</option>
+    </select><br><br>
+  </div>
+
+  <!-- Recommend -->
+  <div class="form-row">
+    <label>Would you recommend our service?</label>
+    <select name="recommend" required>
+      <option value="">Select...</option>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+    </select><br><br>
+  </div>
+
+  <!-- Comments -->
+  <div class="form-row">
+    <label>Suggestions or Comments:</label><br>
+    <textarea name="comments" rows="5"></textarea><br><br>
+  </div>
+
+  <!-- Email -->
+  <div class="form-row">
+    <label>Do you want a copy of your response? (Optional)</label><br>
+    <input type="email" name="email" placeholder="Enter your email"><br><br>
+  </div>
+
+  <!-- Submit -->
+  <button type="submit">Submit Feedback</button>
+
+  </i>
+  </form>
+  <script src="script.js"></script>
+
+</body>
+</html>
